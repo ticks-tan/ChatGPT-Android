@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ChatGPT</string>
+    <string name="action_settings">设置</string>
+    <string name="start_new_chat">开始新聊天</string>
+    <string name="new_chat_dialog_titleDes">为你的聊天指定一个标题，方便之后查看</string>
+    <string name="new_chat_dialog_titleInputHint">请输入标题</string>
+    <string name="new_chat_dialog_modelDes">指定AI模型，不同模型可能价格不同</string>
+    <string name="new_chat_dialog_modelInputHint">请选择模型</string>
+    <string name="new_chat_dialog_promptDes">选择一个Prompt，帮助AI规范行为</string>
+    <string name="new_chat_dialog_promptInputHint">请选择Prompt</string>
+    <string name="cancel">取消</string>
+    <string name="start">开始</string>
+    <string name="rename">重命名</string>
+    <string name="chat_message_example">你好呀Ready-to-use already styled solution for quick implementation;</string>
+    <string name="chat_message_input_hint">你想问什么呢</string>
+    <string name="chat_room_title">聊天室标题</string>
+    <string name="chat_room_des">聊天室描述</string>
+    <string name="copy">复制</string>
+    <string name="title_activity_settings">设置</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+</resources>

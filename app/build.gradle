@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\Bin\\Android\\keys\\ticks.cc.jks')
+            keyAlias 'Ticks'
+            storePassword 'TW****tw@@&&..'
+            keyPassword 'TW****tw@@&&..'
+        }
+    }
+    namespace 'cc.ticks.chatgpt'
+    compileSdk 33
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError true
+    }
+
+    defaultConfig {
+        applicationId "cc.ticks.chatgpt"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    buildToolsVersion '33.0.2'
+}
+
+dependencies {
+
+    implementation 'androidx.preference:preference:1.2.0'
+    def room_version = "2.5.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    def fastAdapter_version = "5.7.0"
+    implementation "com.mikepenz:fastadapter:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-expandable:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-binding:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-scroll:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-drag:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-diff:${fastAdapter_version}"
+    implementation "com.mikepenz:fastadapter-extensions-utils:${fastAdapter_version}"
+
+    implementation 'com.gitee.zackratos:UltimateBarX:0.7.1'
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation "com.squareup.okhttp3:okhttp-sse:4.10.0"
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

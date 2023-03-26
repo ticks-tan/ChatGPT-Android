@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ChatRoomListFragment">
+
+    <fragment
+        android:id="@+id/ChatRoomListFragment"
+        android:name="cc.ticks.chatgpt.fragment.ChatRoomListFragment"
+        tools:layout="@layout/fragment_chat_room">
+        <argument
+            android:name="roomId"
+            app:argType="long"/>
+        <action
+            android:id="@+id/action_ChatRoomList_to_ChatRoomDetail"
+            app:destination="@id/ChatRoomDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ChatRoomDetailFragment"
+        android:name="cc.ticks.chatgpt.fragment.ChatRoomDetailFragment"
+        tools:layout="@layout/fragment_chat_room_detail">
+
+        <action
+            android:id="@+id/action_ChatRoomDetail_to_ChatRoomList"
+            app:destination="@id/ChatRoomListFragment"
+            app:popUpTo="@id/ChatRoomListFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

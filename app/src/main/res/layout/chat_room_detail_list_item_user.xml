@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatRoomDetailMessageItem_userLayout"
+    >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/chatRoomDetailMessageItem_userImg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:id="@+id/chatRoomDetailMessageItem_msgBox"
+        app:layout_constraintStart_toEndOf="@id/guide1"
+        app:layout_constraintEnd_toStartOf="@id/chatRoomDetailMessageItem_userImg"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="?attr/colorOnSecondaryContainer"
+        android:background="@drawable/chat_room_detail_user_message_background"
+        >
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/chatRoomDetailMessageItem_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="true"
+            android:background="@android:color/transparent"
+            android:text="@string/chat_message_example"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/chatRoomDetailMessageItem_msgDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:textSize="8sp"
+            android:text="2023/03/01 17:20"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
